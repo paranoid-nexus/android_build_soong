@@ -236,6 +236,12 @@ type ProductVariables struct {
 	BuildThumbprintFile  *string `json:",omitempty"`
 	DisplayBuildNumber   *bool   `json:",omitempty"`
 
+	NexusDevice         *string `json:",omitempty"`
+	NexusDisplayVersion *string `json:",omitempty"`
+	NexusMajorVersion   *string `json:",omitempty"`
+	NexusMinorVersion   *string `json:",omitempty"`
+	NexusBuildVariant   *string `json:",omitempty"`
+
 	Platform_display_version_name          *string  `json:",omitempty"`
 	Platform_version_name                  *string  `json:",omitempty"`
 	Platform_sdk_version                   *int     `json:",omitempty"`

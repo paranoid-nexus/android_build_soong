@@ -1030,6 +1030,22 @@ func (c *config) DisplayBuildNumber() bool {
 	return Bool(c.productVariables.DisplayBuildNumber)
 }
 
+func (c *config) NexusDisplayVersion() string {
+	return fmt.Sprintf("%q", String(c.productVariables.NexusDisplayVersion))
+}
+
+func (c *config) NexusMajorVersion() string {
+	return String(c.productVariables.NexusMajorVersion)
+}
+
+func (c *config) NexusMinorVersion() string {
+	return String(c.productVariables.NexusMinorVersion)
+}
+
+func (c *config) NexusBuildVariant() string {
+	return String(c.productVariables.NexusBuildVariant)
+}
+
 // BuildFingerprintFile returns the path to a text file containing metadata
 // representing the current build's fingerprint.
 //

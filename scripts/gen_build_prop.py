@@ -123,6 +123,8 @@ def parse_args():
   if config["BuildNumber"].startswith("eng."):
     config["BuildNumber"] = config["DateUtc"]
 
+  config["NexusDevice"] = config["DeviceName"]
+
   override_config(config)
 
   append_additional_system_props(args)
@@ -269,6 +271,12 @@ def generate_build_info(args):
   print(f"ro.build.description?={config['BuildDesc']}")
   if "BuildThumbprint" in config:
     print(f"ro.build.thumbprint={config['BuildThumbprint']}")
+
+  print(f"ro.nexus.device={config['NexusDevice']}")
+  print(f"ro.nexus.version={config['NexusDisplayVersion']}")
+  print(f"ro.nexus.version.major={config['NexusMajorVersion']}")
+  print(f"ro.nexus.version.minor={config['NexusMinorVersion']}")
+  print(f"ro.nexus.build.variant={config['NexusBuildVariant']}")
 
   print(f"# end build properties")
 
